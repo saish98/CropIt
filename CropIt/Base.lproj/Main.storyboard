@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Crop View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="CropViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="CropViewController" customModule="CropIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ymd-Kw-S0a">
+                                <rect key="frame" x="20" y="64" width="374" height="664"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QpQ-a1-f1D">
+                                <rect key="frame" x="290" y="748.5" width="74" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="H3k-4p-21U"/>
+                                    <constraint firstAttribute="width" constant="74" id="nE3-sw-SoZ"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <state key="normal" backgroundImage="cross.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="btnSelectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iu1-0Y-wVJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QpQ-a1-f1D" secondAttribute="bottom" constant="40" id="9mk-FN-Xsa"/>
+                            <constraint firstItem="Ymd-Kw-S0a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YwZ-35-h3e"/>
+                            <constraint firstItem="Ymd-Kw-S0a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="j6a-BH-Mfm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QpQ-a1-f1D" secondAttribute="trailing" constant="50" id="nHJ-WX-0UG"/>
+                            <constraint firstItem="QpQ-a1-f1D" firstAttribute="top" secondItem="Ymd-Kw-S0a" secondAttribute="bottom" constant="20" id="tVB-4s-QeK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ymd-Kw-S0a" secondAttribute="trailing" constant="20" id="uZ2-fR-2Lx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnSelect" destination="QpQ-a1-f1D" id="p78-rp-lOO"/>
+                        <outlet property="imgPicked" destination="Ymd-Kw-S0a" id="s4S-LV-Q6J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="111.59420289855073" y="88.392857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cross.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

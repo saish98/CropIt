@@ -40,9 +40,6 @@ class CircleCropViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.black
-        scrollView.backgroundColor = UIColor.black
-        
         imageView.image = image
         imageView.frame = CGRect(origin: CGPoint.zero, size: image.size)
         scrollView.delegate = self
@@ -68,7 +65,7 @@ class CircleCropViewController: UIViewController, UIScrollViewDelegate {
         cutterView.frame.size.width = cutterView.frame.size.height
         
         //Add the label and buttons
-        label.text = "Move and Scale"
+        label.text = "Pinch and Zoom"
         label.textAlignment = .center
         label.textColor = UIColor.white
         label.font = label.font.withSize(17)
@@ -78,7 +75,7 @@ class CircleCropViewController: UIViewController, UIScrollViewDelegate {
         okButton.titleLabel?.font = backButton.titleLabel?.font.withSize(17)
         okButton.addTarget(self, action: #selector(didTapOk), for: .touchUpInside)
         
-        backButton.setTitle("<", for: UIControl.State())
+        backButton.setTitle("<-", for: UIControl.State())
         backButton.setTitleColor(UIColor.white, for: UIControl.State())
         backButton.titleLabel?.font = backButton.titleLabel?.font.withSize(30)
         backButton.addTarget(self, action: #selector(didTapBack), for: .touchUpInside)

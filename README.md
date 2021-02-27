@@ -1,2 +1,2 @@
 # CropIt
-iOS App to crop photos in circularly in Swift 5
+iOS App to crop photos circularly in Swift 5

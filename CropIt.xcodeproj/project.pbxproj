@@ -19,6 +19,9 @@
 		00825E3425E898040036E1F8 /* CropViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00825E3325E898040036E1F8 /* CropViewModel.swift */; };
 		0082771925E8A2E9004AFD82 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0082771825E8A2E9004AFD82 /* UIView+Extensions.swift */; };
 		0082771C25E8A989004AFD82 /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0082771B25E8A989004AFD82 /* ImagePickerManager.swift */; };
+		00F7730325EA15FF00425619 /* CircleCropScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F7730125EA15FF00425619 /* CircleCropScrollView.swift */; };
+		00F7730425EA15FF00425619 /* CircleCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F7730225EA15FF00425619 /* CircleCropViewController.swift */; };
+		00F7730925EA16E300425619 /* CircleCropCutterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F7730825EA16E300425619 /* CircleCropCutterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		00825E3325E898040036E1F8 /* CropViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropViewModel.swift; sourceTree = "<group>"; };
 		0082771825E8A2E9004AFD82 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		0082771B25E8A989004AFD82 /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
+		00F7730125EA15FF00425619 /* CircleCropScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCropScrollView.swift; sourceTree = "<group>"; };
+		00F7730225EA15FF00425619 /* CircleCropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCropViewController.swift; sourceTree = "<group>"; };
+		00F7730825EA16E300425619 /* CircleCropCutterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCropCutterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,7 @@
 		00825E0B25E8957E0036E1F8 /* CropIt */ = {
 			isa = PBXGroup;
 			children = (
+				00F7730025EA15EF00425619 /* View */,
 				00825E3125E8978C0036E1F8 /* Controllers */,
 				00825E3025E897800036E1F8 /* ViewModel */,
 				00825E2425E8964D0036E1F8 /* Coordinator */,
@@ -112,9 +119,19 @@
 		00825E3125E8978C0036E1F8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				00F7730225EA15FF00425619 /* CircleCropViewController.swift */,
 				00825E1025E8957E0036E1F8 /* CropViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		00F7730025EA15EF00425619 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00F7730825EA16E300425619 /* CircleCropCutterView.swift */,
+				00F7730125EA15FF00425619 /* CircleCropScrollView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +205,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				00825E2625E896740036E1F8 /* AppCoordinator.swift in Sources */,
+				00F7730425EA15FF00425619 /* CircleCropViewController.swift in Sources */,
+				00F7730325EA15FF00425619 /* CircleCropScrollView.swift in Sources */,
 				00825E2A25E897030036E1F8 /* CropViewCoordinator.swift in Sources */,
 				00825E1125E8957E0036E1F8 /* CropViewController.swift in Sources */,
 				00825E3425E898040036E1F8 /* CropViewModel.swift in Sources */,
@@ -196,6 +215,7 @@
 				00825E2E25E897410036E1F8 /* UIViewController+Extensions.swift in Sources */,
 				0082771925E8A2E9004AFD82 /* UIView+Extensions.swift in Sources */,
 				00825E0F25E8957E0036E1F8 /* SceneDelegate.swift in Sources */,
+				00F7730925EA16E300425619 /* CircleCropCutterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

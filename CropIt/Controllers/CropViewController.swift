@@ -7,64 +7,44 @@
 
 import UIKit
 
-class CropViewController: UIViewController {
+class CropViewController: UIViewController, CircleCropViewControllerDelegate {
     var viewModel: CropViewModel!
-
-    @IBOutlet var scrollView: UIScrollView!
+    
     @IBOutlet var imageView: UIImageView!
     
     @IBOutlet weak var btnSelect: UIButton!
-    @IBOutlet weak var btnCrop: UIButton!
-    
-    var imageTaken: UIImage!
+    @IBOutlet weak var btnTrash: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.btnSelect.addShadow()
-        btnCrop.isHidden = true
-        scrollView.minimumZoomScale = 1.0
-        scrollView.maximumZoomScale = 4.0
+        btnTrash.isHidden = true
+    }
+    
+    private func initiateCropLoader(with image: UIImage) {
+        let circleCropController = CircleCropViewController(withImage: image)
+        circleCropController.delegate = self
+        present(circleCropController, animated: false, completion: nil)
     }
 
     @IBAction func btnSelectPhoto(_ sender: Any) {
-        btnCrop.isHidden = true
+        btnTrash.isHidden = true
         ImagePickerManager().pickImage(self) { [self] image in
-            imageView.image = image
-            imageTaken = image
-            btnCrop.isHidden = false
+            btnTrash.isHidden = false
+            initiateCropLoader(with: image)
         }
     }
     
-    @IBAction func btnCropPhoto(_ sender: UIButton) {
-        let croppedImage = viewModel.setImageToCrop(image: imageTaken,
-                                                    scrollView: scrollView,
-                                                    imageView: imageView)
-        UIImageWriteToSavedPhotosAlbum(croppedImage, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+    func circleCropDidCancel() {
+        dismiss(animated: false, completion: nil)
     }
     
-    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        if let error = error {
-            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
-            present(ac, animated: true)
-        } else {
-            let ac = UIAlertController(title: "Saved!", message: "Your altered image has been saved to your photos.", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
-            present(ac, animated: true)
-        }
-    }
-}
-
-extension CropViewController: UIScrollViewDelegate {
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return imageView
+    func circleCropDidCropImage(_ image: UIImage) {
+        imageView.image = image
+        dismiss(animated: false, completion: nil)
     }
     
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        if scrollView.zoomScale > scrollView.maximumZoomScale {
-            scrollView.zoomScale = scrollView.maximumZoomScale
-        } else if scrollView.zoomScale < scrollView.minimumZoomScale {
-            scrollView.zoomScale = scrollView.minimumZoomScale
-        }
+    @IBAction func btnTrashPhoto(_ sender: UIButton) {
+        imageView.image = nil
     }
 }

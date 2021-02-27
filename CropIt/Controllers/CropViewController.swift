@@ -36,27 +36,10 @@ class CropViewController: UIViewController {
     }
     
     @IBAction func btnCropPhoto(_ sender: UIButton) {
-        let croppedImage = setImageToCrop(image: imageTaken)
+        let croppedImage = viewModel.setImageToCrop(image: imageTaken,
+                                                    scrollView: scrollView,
+                                                    imageView: imageView)
         UIImageWriteToSavedPhotosAlbum(croppedImage, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
-    }
-    
-    func setImageToCrop(image: UIImage) -> UIImage {
-        let visibleRect = scrollView.convert(scrollView.bounds, to: imageView)
-        let croppedImage: UIImage!
-        let maskLayer = CALayer()
-        maskLayer.contents = image.cgImage
-        maskLayer.frame = CGRect(x: 0, y: 0, width: visibleRect.size.width, height: visibleRect.size.height)
-        let rect = CGRect(x: Double(visibleRect.origin.x / image.size.width),
-                          y: Double(visibleRect.origin.y / image.size.height),
-                          width: Double(visibleRect.size.width / image.size.width),
-                          height: Double(visibleRect.size.height / image.size.height))
-        maskLayer.contentsRect = rect
-        UIGraphicsBeginImageContext(visibleRect.size)
-        guard let context = UIGraphicsGetCurrentContext() else { return UIImage(named: "no_image")! }
-        maskLayer.render(in: context)
-        croppedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return croppedImage
     }
     
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {

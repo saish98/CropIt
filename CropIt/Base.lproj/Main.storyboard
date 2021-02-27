@@ -17,9 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ymd-Kw-S0a">
-                                <rect key="frame" x="20" y="64" width="374" height="664"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qV5-xG-r0t">
+                                <rect key="frame" x="50" y="748" width="74" height="74.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="HMc-54-tlO"/>
+                                    <constraint firstAttribute="width" constant="74" id="Qtr-xx-FAp"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <state key="normal" backgroundImage="crop" catalog="system"/>
+                                <connections>
+                                    <action selector="btnCropPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H0U-8r-s9R"/>
+                                    <action selector="btnSelectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Kr-HH-y3R"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QpQ-a1-f1D">
                                 <rect key="frame" x="290" y="748.5" width="74" height="73"/>
                                 <constraints>
@@ -32,21 +42,46 @@
                                     <action selector="btnSelectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iu1-0Y-wVJ"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YqM-tC-Cyp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="666"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ymd-Kw-S0a">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="658"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ymd-Kw-S0a" firstAttribute="bottom" secondItem="paG-Sa-WaO" secondAttribute="bottom" constant="658" id="Bpu-0r-yID"/>
+                                    <constraint firstItem="Ymd-Kw-S0a" firstAttribute="leading" secondItem="paG-Sa-WaO" secondAttribute="leading" id="SuQ-Sq-izy"/>
+                                    <constraint firstItem="Ymd-Kw-S0a" firstAttribute="top" secondItem="paG-Sa-WaO" secondAttribute="top" id="VDx-dO-9mR"/>
+                                    <constraint firstItem="Ymd-Kw-S0a" firstAttribute="trailing" secondItem="paG-Sa-WaO" secondAttribute="trailing" constant="414" id="e96-BK-IDg"/>
+                                    <constraint firstItem="Ymd-Kw-S0a" firstAttribute="height" secondItem="CnJ-o3-fnM" secondAttribute="height" multiplier="0.987988" id="fcz-GW-gTR"/>
+                                    <constraint firstItem="Ymd-Kw-S0a" firstAttribute="width" secondItem="CnJ-o3-fnM" secondAttribute="width" id="m9t-lr-bgD"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="paG-Sa-WaO"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="CnJ-o3-fnM"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="hRj-A1-lv7"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="qV5-xG-r0t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="2hO-Kg-n49"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qV5-xG-r0t" secondAttribute="bottom" constant="40" id="7yG-Xq-Yd3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QpQ-a1-f1D" secondAttribute="bottom" constant="40" id="9mk-FN-Xsa"/>
-                            <constraint firstItem="Ymd-Kw-S0a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YwZ-35-h3e"/>
-                            <constraint firstItem="Ymd-Kw-S0a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="j6a-BH-Mfm"/>
+                            <constraint firstItem="YqM-tC-Cyp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Sll-pd-vR0"/>
+                            <constraint firstItem="qV5-xG-r0t" firstAttribute="top" secondItem="YqM-tC-Cyp" secondAttribute="bottom" constant="38" id="Vpz-aV-jLi"/>
+                            <constraint firstItem="YqM-tC-Cyp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="auW-VO-g8v"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QpQ-a1-f1D" secondAttribute="trailing" constant="50" id="nHJ-WX-0UG"/>
-                            <constraint firstItem="QpQ-a1-f1D" firstAttribute="top" secondItem="Ymd-Kw-S0a" secondAttribute="bottom" constant="20" id="tVB-4s-QeK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ymd-Kw-S0a" secondAttribute="trailing" constant="20" id="uZ2-fR-2Lx"/>
+                            <constraint firstItem="YqM-tC-Cyp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qj0-ka-ETd"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnCrop" destination="qV5-xG-r0t" id="5r3-mP-jDb"/>
                         <outlet property="btnSelect" destination="QpQ-a1-f1D" id="p78-rp-lOO"/>
-                        <outlet property="imgPicked" destination="Ymd-Kw-S0a" id="s4S-LV-Q6J"/>
+                        <outlet property="imageView" destination="Ymd-Kw-S0a" id="JaO-9J-euI"/>
+                        <outlet property="scrollView" destination="YqM-tC-Cyp" id="Ogz-h3-QtW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -55,6 +90,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="crop" catalog="system" width="128" height="116"/>
         <image name="cross.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

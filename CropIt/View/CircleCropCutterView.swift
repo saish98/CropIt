@@ -30,18 +30,17 @@ class CircleCropCutterView: UIView {
         UIRectFill(rect)
         
         //This is the same rect as the UIScrollView size 240 * 240, remains centered
-        let circle = UIBezierPath(ovalIn: CGRect(x: rect.size.width/2 - 240/2, y: rect.size.height/2 - 240/2, width: 240, height: 240))
+        let circle = UIBezierPath(ovalIn: CGRect(x: rect.size.width/2 - Constants.CROP_SIZE/2, y: rect.size.height/2 - Constants.CROP_SIZE/2, width: Constants.CROP_SIZE, height: Constants.CROP_SIZE))
         context?.setBlendMode(.clear)
         UIColor.clear.setFill()
         circle.fill()
         
         //This is the same rect as the UIScrollView size 240 * 240, remains centered
-        let square = UIBezierPath(rect: CGRect(x: rect.size.width/2 - 240/2, y: rect.size.height/2 - 240/2, width: 240, height: 240))
+        let square = UIBezierPath(rect: CGRect(x: rect.size.width/2 - Constants.CROP_SIZE/2, y: rect.size.height/2 - Constants.CROP_SIZE/2, width: Constants.CROP_SIZE, height: Constants.CROP_SIZE))
         UIColor.lightGray.setStroke()
         square.lineWidth = 1.0
         context?.setBlendMode(.normal)
         square.stroke()
-        
     }
     
     //Allow touches through the circle crop cutter view

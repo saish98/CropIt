@@ -18,7 +18,7 @@ class CircleCropViewController: UIViewController, UIScrollViewDelegate {
     
     var image: UIImage
     let imageView = UIImageView()
-    let scrollView = CircleCropScrollView(frame: CGRect(x: 0, y: 0, width: 240, height: 240))
+    let scrollView = CircleCropScrollView(frame: CGRect(x: 0, y: 0, width: Constants.CROP_SIZE, height: Constants.CROP_SIZE))
     let cutterView = CircleCropCutterView()
     
     let label = UILabel(frame: CGRect(x: 0, y: 0, width: 130, height: 30))
@@ -70,13 +70,13 @@ class CircleCropViewController: UIViewController, UIScrollViewDelegate {
         label.textColor = UIColor.white
         label.font = label.font.withSize(17)
         
-        okButton.setTitle("OK", for: UIControl.State())
+        okButton.setTitle("OK", for: .normal)
         okButton.setTitleColor(UIColor.white, for: UIControl.State())
         okButton.titleLabel?.font = backButton.titleLabel?.font.withSize(17)
         okButton.addTarget(self, action: #selector(didTapOk), for: .touchUpInside)
         
-        backButton.setTitle("<-", for: UIControl.State())
-        backButton.setTitleColor(UIColor.white, for: UIControl.State())
+        backButton.setTitle("<-", for: .normal)
+        backButton.setTitleColor(UIColor.white, for: .normal)
         backButton.titleLabel?.font = backButton.titleLabel?.font.withSize(30)
         backButton.addTarget(self, action: #selector(didTapBack), for: .touchUpInside)
         
@@ -121,8 +121,8 @@ class CircleCropViewController: UIViewController, UIScrollViewDelegate {
         let newSize = CGSize(width: image.size.width*scrollView.zoomScale, height: image.size.height*scrollView.zoomScale)
         let offset = scrollView.contentOffset
         
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: 240, height: 240), false, 0)
-        let circlePath = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 240, height: 240))
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: 340, height: 340), false, 0)
+        let circlePath = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 340, height: 340))
         circlePath.addClip()
         var sharpRect = CGRect(x: -offset.x, y: -offset.y, width: newSize.width, height: newSize.height)
         sharpRect = sharpRect.integral

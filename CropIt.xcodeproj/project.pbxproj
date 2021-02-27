@@ -19,6 +19,7 @@
 		00825E3425E898040036E1F8 /* CropViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00825E3325E898040036E1F8 /* CropViewModel.swift */; };
 		0082771925E8A2E9004AFD82 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0082771825E8A2E9004AFD82 /* UIView+Extensions.swift */; };
 		0082771C25E8A989004AFD82 /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0082771B25E8A989004AFD82 /* ImagePickerManager.swift */; };
+		008F3A4825EA956500A8B511 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008F3A4725EA956500A8B511 /* Constants.swift */; };
 		00F7730325EA15FF00425619 /* CircleCropScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F7730125EA15FF00425619 /* CircleCropScrollView.swift */; };
 		00F7730425EA15FF00425619 /* CircleCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F7730225EA15FF00425619 /* CircleCropViewController.swift */; };
 		00F7730925EA16E300425619 /* CircleCropCutterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F7730825EA16E300425619 /* CircleCropCutterView.swift */; };
@@ -39,6 +40,7 @@
 		00825E3325E898040036E1F8 /* CropViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropViewModel.swift; sourceTree = "<group>"; };
 		0082771825E8A2E9004AFD82 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		0082771B25E8A989004AFD82 /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
+		008F3A4725EA956500A8B511 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		00F7730125EA15FF00425619 /* CircleCropScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCropScrollView.swift; sourceTree = "<group>"; };
 		00F7730225EA15FF00425619 /* CircleCropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCropViewController.swift; sourceTree = "<group>"; };
 		00F7730825EA16E300425619 /* CircleCropCutterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCropCutterView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				00825E1525E8957F0036E1F8 /* Assets.xcassets */,
 				00825E1725E8957F0036E1F8 /* LaunchScreen.storyboard */,
 				00825E1A25E8957F0036E1F8 /* Info.plist */,
+				008F3A4725EA956500A8B511 /* Constants.swift */,
 			);
 			path = CropIt;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				00825E1125E8957E0036E1F8 /* CropViewController.swift in Sources */,
 				00825E3425E898040036E1F8 /* CropViewModel.swift in Sources */,
 				00825E0D25E8957E0036E1F8 /* AppDelegate.swift in Sources */,
+				008F3A4825EA956500A8B511 /* Constants.swift in Sources */,
 				0082771C25E8A989004AFD82 /* ImagePickerManager.swift in Sources */,
 				00825E2E25E897410036E1F8 /* UIViewController+Extensions.swift in Sources */,
 				0082771925E8A2E9004AFD82 /* UIView+Extensions.swift in Sources */,

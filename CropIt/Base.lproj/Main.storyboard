@@ -27,7 +27,6 @@
                                 <state key="normal" backgroundImage="crop" catalog="system"/>
                                 <connections>
                                     <action selector="btnCropPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H0U-8r-s9R"/>
-                                    <action selector="btnSelectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Kr-HH-y3R"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QpQ-a1-f1D">

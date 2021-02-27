@@ -19,11 +19,15 @@ class CropViewController: UIViewController, CircleCropViewControllerDelegate {
         super.viewDidLoad()
         self.btnSelect.addShadow()
         btnTrash.isHidden = true
+        imageView.image = UIImage(named: "placeHolder")
+        imageView.layer.cornerRadius = imageView.width/2
+        imageView.clipsToBounds = true
     }
     
     private func initiateCropLoader(with image: UIImage) {
         let circleCropController = CircleCropViewController(withImage: image)
         circleCropController.delegate = self
+        circleCropController.modalPresentationStyle = .fullScreen
         present(circleCropController, animated: false, completion: nil)
     }
 
@@ -45,6 +49,6 @@ class CropViewController: UIViewController, CircleCropViewControllerDelegate {
     }
     
     @IBAction func btnTrashPhoto(_ sender: UIButton) {
-        imageView.image = nil
+        imageView.image = UIImage(named: "placeHolder")
     }
 }

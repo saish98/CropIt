@@ -21,9 +21,9 @@ class CircleCropViewController: UIViewController, UIScrollViewDelegate {
     let scrollView = CircleCropScrollView(frame: CGRect(x: 0, y: 0, width: Constants.CROP_SIZE, height: Constants.CROP_SIZE))
     let cutterView = CircleCropCutterView()
     
-    let label = UILabel(frame: CGRect(x: 0, y: 0, width: 130, height: 30))
-    let okButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 30))
-    let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 30))
+    let label = UILabel(frame: CGRect(x: 0, y: 0, width: 180, height: 50))
+    let okButton = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: 50))
+    let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: 50))
     
     
     init(withImage image: UIImage) {
@@ -68,16 +68,16 @@ class CircleCropViewController: UIViewController, UIScrollViewDelegate {
         label.text = "Pinch and Zoom"
         label.textAlignment = .center
         label.textColor = UIColor.white
-        label.font = label.font.withSize(17)
+        label.font = UIFont.systemFont(ofSize: 17, weight: .heavy)
         
-        okButton.setTitle("OK", for: .normal)
-        okButton.setTitleColor(UIColor.white, for: UIControl.State())
-        okButton.titleLabel?.font = backButton.titleLabel?.font.withSize(17)
+        okButton.setTitle("Done", for: .normal)
+        okButton.setTitleColor(UIColor.white, for: .normal)
+        okButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         okButton.addTarget(self, action: #selector(didTapOk), for: .touchUpInside)
         
-        backButton.setTitle("<-", for: .normal)
+        backButton.setTitle("Back", for: .normal)
         backButton.setTitleColor(UIColor.white, for: .normal)
-        backButton.titleLabel?.font = backButton.titleLabel?.font.withSize(30)
+        backButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         backButton.addTarget(self, action: #selector(didTapBack), for: .touchUpInside)
         
         setLabelAndButtonFrames()
@@ -93,9 +93,14 @@ class CircleCropViewController: UIViewController, UIScrollViewDelegate {
     func setLabelAndButtonFrames() {
         scrollView.center = view.center
         cutterView.center = view.center
-        label.frame.origin = CGPoint(x: cutterView.frame.size.width/2 - label.frame.size.width/2, y: cutterView.frame.size.height/2 - view.frame.size.height/2 + 3)
-        okButton.frame.origin = CGPoint(x: cutterView.frame.size.width/2 + view.frame.size.width/2 - okButton.frame.size.width - 12, y: cutterView.frame.size.height/2 - view.frame.size.height/2 + 3)
-        backButton.frame.origin = CGPoint(x: cutterView.frame.size.width/2 - view.frame.size.width/2 + 3, y: cutterView.frame.size.height/2 - view.frame.size.height/2 + 1)
+        label.frame.origin = CGPoint(x: cutterView.frame.size.width/2 - label.frame.size.width/2,
+                                     y: cutterView.frame.size.height/2 - view.frame.size.height/2 + 44)
+        
+        okButton.frame.origin = CGPoint(x: cutterView.frame.size.width/2 + view.frame.size.width/2 - okButton.frame.size.width,
+                                        y: cutterView.frame.size.height/2 - view.frame.size.height/2 + 44)
+        
+        backButton.frame.origin = CGPoint(x: cutterView.frame.size.width/2 - view.frame.size.width/2,
+                                          y: cutterView.frame.size.height/2 - view.frame.size.height/2 + 44)
     }
     
     
@@ -121,8 +126,8 @@ class CircleCropViewController: UIViewController, UIScrollViewDelegate {
         let newSize = CGSize(width: image.size.width*scrollView.zoomScale, height: image.size.height*scrollView.zoomScale)
         let offset = scrollView.contentOffset
         
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: 340, height: 340), false, 0)
-        let circlePath = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 340, height: 340))
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: Constants.CROP_SIZE, height: Constants.CROP_SIZE), false, 0)
+        let circlePath = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: Constants.CROP_SIZE, height: Constants.CROP_SIZE))
         circlePath.addClip()
         var sharpRect = CGRect(x: -offset.x, y: -offset.y, width: newSize.width, height: newSize.height)
         sharpRect = sharpRect.integral

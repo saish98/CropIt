@@ -17,12 +17,13 @@
 		00825E2A25E897030036E1F8 /* CropViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00825E2925E897030036E1F8 /* CropViewCoordinator.swift */; };
 		00825E2E25E897410036E1F8 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00825E2D25E897410036E1F8 /* UIViewController+Extensions.swift */; };
 		00825E3425E898040036E1F8 /* CropViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00825E3325E898040036E1F8 /* CropViewModel.swift */; };
-		0082771925E8A2E9004AFD82 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0082771825E8A2E9004AFD82 /* UIView+Extensions.swift */; };
 		0082771C25E8A989004AFD82 /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0082771B25E8A989004AFD82 /* ImagePickerManager.swift */; };
 		008F3A4825EA956500A8B511 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008F3A4725EA956500A8B511 /* Constants.swift */; };
 		00F7730325EA15FF00425619 /* CircleCropScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F7730125EA15FF00425619 /* CircleCropScrollView.swift */; };
 		00F7730425EA15FF00425619 /* CircleCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F7730225EA15FF00425619 /* CircleCropViewController.swift */; };
 		00F7730925EA16E300425619 /* CircleCropCutterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F7730825EA16E300425619 /* CircleCropCutterView.swift */; };
+		30BEC1BD25EAFE9100CC169B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0082771825E8A2E9004AFD82 /* UIView+Extensions.swift */; };
+		30BEC1C025EAFEAB00CC169B /* UIView+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BEC1BF25EAFEAB00CC169B /* UIView+Size.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		00F7730125EA15FF00425619 /* CircleCropScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCropScrollView.swift; sourceTree = "<group>"; };
 		00F7730225EA15FF00425619 /* CircleCropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCropViewController.swift; sourceTree = "<group>"; };
 		00F7730825EA16E300425619 /* CircleCropCutterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCropCutterView.swift; sourceTree = "<group>"; };
+		30BEC1BF25EAFEAB00CC169B /* UIView+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Size.swift"; path = "../../../CropIt2/CropIt/Extensions/UIView+Size.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		00825E2C25E8972A0036E1F8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				30BEC1BF25EAFEAB00CC169B /* UIView+Size.swift */,
 				00825E2D25E897410036E1F8 /* UIViewController+Extensions.swift */,
 				0082771825E8A2E9004AFD82 /* UIView+Extensions.swift */,
 			);
@@ -207,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30BEC1BD25EAFE9100CC169B /* UIView+Extensions.swift in Sources */,
 				00825E2625E896740036E1F8 /* AppCoordinator.swift in Sources */,
 				00F7730425EA15FF00425619 /* CircleCropViewController.swift in Sources */,
 				00F7730325EA15FF00425619 /* CircleCropScrollView.swift in Sources */,
@@ -217,7 +221,7 @@
 				008F3A4825EA956500A8B511 /* Constants.swift in Sources */,
 				0082771C25E8A989004AFD82 /* ImagePickerManager.swift in Sources */,
 				00825E2E25E897410036E1F8 /* UIViewController+Extensions.swift in Sources */,
-				0082771925E8A2E9004AFD82 /* UIView+Extensions.swift in Sources */,
+				30BEC1C025EAFEAB00CC169B /* UIView+Size.swift in Sources */,
 				00825E0F25E8957E0036E1F8 /* SceneDelegate.swift in Sources */,
 				00F7730925EA16E300425619 /* CircleCropCutterView.swift in Sources */,
 			);
@@ -367,13 +371,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MM525HVHT8;
+				DEVELOPMENT_TEAM = W8YR43228J;
 				INFOPLIST_FILE = CropIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.deepak.CropIt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.CropIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -386,13 +390,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MM525HVHT8;
+				DEVELOPMENT_TEAM = W8YR43228J;
 				INFOPLIST_FILE = CropIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.deepak.CropIt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.CropIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -1,24 +1,66 @@
 //
-//  UIView+Extensions.swift
-//  CropIt
+//  UIView+Size.swift
+//  Popviewers
 //
-//  Created by Deepak Thakur on 26/02/21.
+//  Created by saish98 on 25/09/19.
+//  Copyright © 2019 Heady. All rights reserved.
 //
 
+import Foundation
 import UIKit
-import CoreGraphics
 
 extension UIView {
-    func addShadow() {
-        self.layer.shadowColor = UIColor.blue.cgColor
-        self.layer.shadowOpacity = 1
-        self.layer.shadowOffset = .zero
-        self.layer.shadowOpacity = 0.2
-        self.layer.shadowRadius = 2.0
-        let cornerRadius = self.frame.size.height / 2
-        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: cornerRadius).cgPath
+
+    /// Get Set x Position
+    var xAxis: CGFloat {
+        get {
+            return self.frame.origin.x
+        }
+        set {
+            self.frame.origin.x = newValue
+        }
     }
-    
+
+    /// Get Set y Position
+    var yAxis: CGFloat {
+        get {
+            return self.frame.origin.y
+        }
+        set {
+            self.frame.origin.y = newValue
+        }
+    }
+
+    /// Get Set Height
+    var height: CGFloat {
+        get {
+            return self.frame.size.height
+        }
+        set {
+            self.frame.size.height = newValue
+        }
+    }
+
+    ///  Get Set Width
+    var width: CGFloat {
+        get {
+            return self.frame.size.width
+        }
+        set {
+            self.frame.size.width = newValue
+        }
+    }
+
+    ///  Get Right side of view
+    var right: CGFloat {
+        return self.frame.size.width + self.frame.origin.x
+    }
+
+    ///  Get bottom of view
+    var bottom: CGFloat {
+        return self.frame.size.height + self.frame.origin.y
+    }
+
     /// Set rounded corner for View
     /// - Parameter cornerRadius: radius for all corners
     func roundCorners(cornerRadius: CGFloat) {
@@ -60,6 +102,17 @@ extension UIView {
         self.layer.shadowRadius = radius
         self.layer.shadowColor = color.cgColor
     }
+
+  
+      /// Sets the session/home screen tab shadow
+      /// - Parameter color: Colour for the shadow.
+      func setSessionHomeShadow(with color: UIColor) {
+          self.layer.masksToBounds = false
+          self.layer.shadowOpacity = 1
+          self.layer.shadowOffset = CGSize(width: 0, height: 12)
+          self.layer.shadowRadius = 9.0
+          self.layer.shadowColor = color.cgColor
+      }
 }
 
 /// Set rounded corner for View

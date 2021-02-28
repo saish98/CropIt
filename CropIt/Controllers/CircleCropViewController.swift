@@ -75,7 +75,7 @@ class CircleCropViewController: UIViewController, UIScrollViewDelegate {
         okButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         okButton.addTarget(self, action: #selector(didTapOk), for: .touchUpInside)
         
-        backButton.setTitle("Back", for: .normal)
+        backButton.setTitle("Cancel", for: .normal)
         backButton.setTitleColor(UIColor.white, for: .normal)
         backButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         backButton.addTarget(self, action: #selector(didTapBack), for: .touchUpInside)
